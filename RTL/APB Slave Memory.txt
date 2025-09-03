@@ -1,0 +1,73 @@
+// APB Slave Memory
+module apb_slave_memory(
+  input        pclk,
+  input        prst_n,
+  input        pselx,
+  input        penable,
+  input        pwrite,
+  input  [31:0] pwdata,
+  input  [31:0] paddr,
+  output reg   pready,
+  output reg   pslverr,
+  output reg [31:0] prdata,
+  output reg [31:0] temp
+);
+
+  // Memory
+  reg [31:0] mem [31:0];
+
+  // FSM states
+  parameter [1:0] IDLE   = 2'b00;
+  parameter [1:0] SETUP  = 2'b01;
+  parameter [1:0] ACCESS = 2'b10;
+
+  reg [1:0] present_state, next_state;
+
+  // State register
+  always @(posedge pclk or negedge prst_n) begin
+    if (!prst_n)
+      present_state <= IDLE;
+    else
+      present_state <= next_state;
+  end
+
+  // Next state logic
+  always @(*) begin
+    case (present_state)
+      IDLE:   next_state = SETUP;
+      SETUP:  next_state = (pselx) ? ACCESS : IDLE;
+      ACCESS: next_state = (!penable) ? SETUP : ACCESS;
+      default: next_state = IDLE;
+    endcase
+  end
+
+  // Output + memory operations
+  always @(posedge pclk or negedge prst_n) begin
+    if (!prst_n) begin
+      pready  <= 0;
+      pslverr <= 0;
+      prdata  <= 0;
+      temp    <= 0;
+    end else begin
+      pready <= 0;  // default
+
+      case (present_state)
+        ACCESS: begin
+          pready <= 1;
+
+          if (penable && pwrite) begin
+            if (paddr > 31) begin//address >31 then error
+              pslverr <= 1;
+            end else begin
+              mem[paddr] <= pwdata;
+              pslverr    <= 0;
+            end
+          end else if (penable && !pwrite) begin
+            prdata <= mem[paddr];//reads the data from memory temporary variable
+            temp   <= mem[paddr]; 
+          end
+        end
+      endcase
+    end
+  end
+endmodule
