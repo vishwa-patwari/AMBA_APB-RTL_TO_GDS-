@@ -1,9 +1,3 @@
-Got it ✅ Vishwa. Since you’ll be showing this off as a **complete RTL → GDS project**, I’ll extend the **README.md** to include a **Simulation Output Screenshot** section (where you’ll later paste in your GTKWave / console logs), plus placeholders for **OpenROAD** and **OpenSTA** results.
-
-Here’s the polished version for your project:
-
----
-
 # 📘 APB Slave Memory – RTL to GDSII Project
 
 ## 📌 Overview
