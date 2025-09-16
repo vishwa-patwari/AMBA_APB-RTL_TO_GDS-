@@ -1,0 +1,67 @@
+Warning: sta_run.tcl line 12, unknown field nets.
+Startpoint: _5713_ (rising edge-triggered flip-flop clocked by pclk)
+Endpoint: _4686_ (rising edge-triggered flip-flop clocked by pclk)
+Path Group: pclk
+Path Type: min
+
+Fanout       Cap      Slew     Delay      Time   Description
+-------------------------------------------------------------------------------------
+                    0.0000    0.0000    0.0000   clock pclk (rise edge)
+                              0.0000    0.0000   clock network delay (ideal)
+                    0.0000    0.0000    0.0000 ^ _5713_/CK (DFFR_X1)
+     1    1.6513    0.0101    0.0649    0.0649 ^ _5713_/QN (DFFR_X1)
+                    0.0101    0.0000    0.0649 ^ _4486_/A2 (NOR2_X1)
+     6    7.8910    0.0107    0.0184    0.0833 v _4486_/ZN (NOR2_X1)
+                    0.0107    0.0000    0.0833 v _4686_/D (DFFR_X1)
+                                        0.0833   data arrival time
+
+                    0.0000    0.0000    0.0000   clock pclk (rise edge)
+                              0.0000    0.0000   clock network delay (ideal)
+                              0.1000    0.1000   clock uncertainty
+                              0.0000    0.1000   clock reconvergence pessimism
+                                        0.1000 ^ _4686_/CK (DFFR_X1)
+                              0.0026    0.1026   library hold time
+                                        0.1026   data required time
+-------------------------------------------------------------------------------------
+                                        0.1026   data required time
+                                       -0.0833   data arrival time
+-------------------------------------------------------------------------------------
+                                       -0.0194   slack (VIOLATED)
+
+
+Startpoint: paddr[2] (input port clocked by pclk)
+Endpoint: _4815_ (rising edge-triggered flip-flop clocked by pclk)
+Path Group: pclk
+Path Type: max
+
+Fanout       Cap      Slew     Delay      Time   Description
+-------------------------------------------------------------------------------------
+                    0.0000    0.0000    0.0000   clock pclk (rise edge)
+                              0.0000    0.0000   clock network delay (ideal)
+                              1.0000    1.0000 v input external delay
+     9   12.8000    0.0000    0.0000    1.0000 v paddr[2] (in)
+                    0.0000    0.0000    1.0000 v _4599_/A2 (OR2_X1)
+     8   12.4278    0.0199    0.0657    1.0657 v _4599_/ZN (OR2_X1)
+                    0.0199    0.0000    1.0657 v _2870_/A4 (NOR4_X1)
+    33   55.6031    0.5543    0.6613    1.7270 ^ _2870_/ZN (NOR4_X1)
+                    0.5543    0.0000    1.7270 ^ _2871_/A2 (NAND2_X1)
+    32   57.7761    0.1502    0.2948    2.0218 v _2871_/ZN (NAND2_X1)
+                    0.1502    0.0000    2.0218 v _2872_/S (MUX2_X1)
+     1    1.0623    0.0144    0.0975    2.1194 v _2872_/Z (MUX2_X1)
+                    0.0144    0.0000    2.1194 v _4815_/D (DFF_X1)
+                                        2.1194   data arrival time
+
+                    0.0000   10.0000   10.0000   clock pclk (rise edge)
+                              0.0000   10.0000   clock network delay (ideal)
+                             -0.1000    9.9000   clock uncertainty
+                              0.0000    9.9000   clock reconvergence pessimism
+                                        9.9000 ^ _4815_/CK (DFF_X1)
+                             -0.0426    9.8574   library setup time
+                                        9.8574   data required time
+-------------------------------------------------------------------------------------
+                                        9.8574   data required time
+                                       -2.1194   data arrival time
+-------------------------------------------------------------------------------------
+                                        7.7381   slack (MET)
+
+
