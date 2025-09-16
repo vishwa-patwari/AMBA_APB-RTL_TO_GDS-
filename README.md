@@ -9,87 +9,116 @@ The ultimate goal is to take this design **from RTL → GDSII** using open-sourc
 
 ---
 
+
 ## 🏗️ Features
-
-* **APB Protocol Compliant** (PCLK, PENABLE, PSELx, PWRITE, PREADY, PSLVERR).
-* **32-bit data, 32 addresses**.
-* Handles both **read and write transfers**.
-* Includes debug signal `temp` to check stored memory contents.
-* Fully synthesizable RTL.
+- Fully functional APB Slave Memory module.
+- Complete RTL design in Verilog.
+- **Synthesis** using **Yosys** targeting **Nangate 45nm library**.
+- **Static Timing Analysis (STA)** using **OpenSTA**.
+- **Place & Route (PnR)** using **OpenROAD**.
+- **GDSII generation** using **KLayout**.
+- Detailed reports for each stage of the flow.
 
 ---
 
-## 📂 Repository Structure
+## 🗂️ Directory Structure
 
 ```
+
+apb\_slave\_memory/
+│
 ├── rtl/
-│   └── apb_slave_memory.sv      # RTL Design
-├── tb/
-│   └── apb_memory_tb.sv         # Testbench
-├── sim/
-│   └── dump.vcd                 # Simulation waveform (generated)
-├── docs/
-│   └── README.md                # Project Documentation
-└── flow/
-    ├── yosys/                   # Synthesis scripts
-    ├── openroad/                # Floorplanning, placement & routing
-    ├── opensta/                 # Timing analysis
-    └── reports/                 # Timing, area, power reports
+│   ├── apb\_slave.v           # Verilog source file
+│
+├── Testbench/
+│   ├── apb\_slave_tb.v
+├── synthesis/
+│   ├── scripts
+│   └── reports/              # Synthesis reports
+│
+├── sta/
+│   ├── scripts
+│   └── reports/              # STA reports
+│
+├── pnr/
+│   ├── scripts/              # PnR scripts
+│   ├── results/
+│   │   ├── floorplanning/
+│   │   ├── global\_placement/
+│   │   ├── detailed\_placement/
+│   │   ├── cts/
+│   │   └── routing/
+│   │       └── \*.def         # DEF files for each stage
+│   └── reports/
+│       ├── pre\_cts/
+│       └── post\_cts/         # PnR reports
+│
+└── README.md                 # Project documentation
+
 ```
 
 ---
 
-## ⚡ Simulation
-
-1. Compile and run using **Icarus Verilog**:
-
-   ```bash
-   iverilog -o simv rtl/apb_slave_memory.sv tb/apb_memory_tb.sv
-   vvp simv
-   gtkwave dump.vcd
-   ```
-2. Console output example:
-
-   ```
-   Writing data into memory: data = deadbeef, address = 5
-   Reading data from memory: data = deadbeef, address = 5
-   ```
+## 🛠️ Tools & Libraries Used
+- **RTL Design:** Verilog/SystemVerilog
+- **Synthesis:** Yosys  
+- **Library:** Nangate 45nm Open Cell Library  
+- **STA:** OpenSTA  
+- **Place & Route (PnR):** OpenROAD  
+- **GDSII Viewing & Verification:** KLayout  
+- **Simulation:** Any RTL simulator (ModelSim/iverilog/other)
 
 ---
 
-## 📸 Simulation Output Screenshot
+## ⚡ Project Flow
+1. **RTL Design:**  
+   - Implemented APB Slave Memory in `rtl/apb_slave.v`.  
+   - Simulated and verified functional correctness.  
 
-<img width="1867" height="437" alt="image" src="https://github.com/user-attachments/assets/1a40b3cf-47cc-4073-bf5e-0e780eb3bb97" />
+2. **Synthesis:**  
+   - Run Yosys scripts to synthesize RTL to gate-level netlist.  
+   - Generate schematics and reports in `synthesis/reports/`.
 
+3. **Static Timing Analysis (STA):**  
+   - Perform timing checks using OpenSTA.  
+   - Reports saved in `sta/reports/`.
 
-## 🛠️ Tools Used
+4. **Place & Route (PnR):**  
+   - Floorplanning, placement, clock tree synthesis (CTS), and routing performed using OpenROAD.  
+   - DEF files for each stage saved in `pnr/results/`.  
+   - Timing, congestion, and design rule reports saved in `pnr/reports/`.
 
-* **RTL & Simulation:** Icarus Verilog, GTKWave
-* **Linting:** Verilator / Surelog
-* **Synthesis:** Yosys
-* **PnR (RTL → GDSII):** OpenROAD / OpenLane
-* **Timing Analysis:** OpenSTA
-* **Signoff:** Magic, KLayout, Netgen
-
----
-
-## 🚀 Next Steps
-
-✅ Step 1: RTL design + Testbench ✅
-✅ Step 2: Functional simulation ✅
-🔄 Step 3: Synthesis (Yosys)
-🔄 Step 4: Floorplan, placement, routing (OpenROAD)
-🔄 Step 5: Timing checks (OpenSTA)
-🔄 Step 6: DRC/LVS signoff (Magic, KLayout)
-🔄 Step 7: Final **GDSII generation**
+5. **GDSII Generation:**  
+   - Final layout exported to GDSII format using KLayout.  
+   - Ready for fabrication or further analysis.
 
 ---
 
-## 📜 License
-
-This project is released under the [MIT License](LICENSE).
+## 📄 Reports
+- **Synthesis Reports:** Area, timing, and power estimates.  
+- **STA Reports:** Setup/hold violations, slack analysis.  
+- **PnR Reports:** Floorplan utilization, congestion, DRC, LVS checks.  
 
 ---
+
+## 📌 Notes
+- This project uses **open-source EDA tools**, making it reproducible on any Linux environment.  
+- The project demonstrates a **full ASIC design flow**, which can be used as a reference for other memory designs or APB peripheral modules.
+
+---
+
+## 🔗 References
+- [Yosys Open Source Synthesis Tool](http://www.clifford.at/yosys/)  
+- [OpenSTA Timing Analysis Tool](https://github.com/The-OpenROAD-Project/OpenSTA)  
+- [OpenROAD Place & Route](https://theopenroadproject.org/)  
+- [KLayout GDS Viewer](https://www.klayout.de/)  
+- [Nangate 45nm Open Cell Library](https://si2.org/open-cell-library/)
+
+---
+
+## 📝 License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details
+
 
 ✨ *Author: Vishwa Patwari*
 📅 *2025*
