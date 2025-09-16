@@ -48,13 +48,14 @@ apb\_slave\_memory/
 │   │   ├── detailed\_placement/
 │   │   ├── cts/
 │   │   └── routing/
-│   │       └── \*.def         # DEF files for each stage
+│   │   │  └── \*.def # DEF files for each stage
+│   │   └── final_gds/gds_file # final gds is here        
 │   └── reports/
 │       ├── pre\_cts/
 │       └── post\_cts/         # PnR reports
 │
 └── README.md                 # Project documentation
-
+└── PnR_scrrenshot            #all screenshot
 ```
 
 ---
