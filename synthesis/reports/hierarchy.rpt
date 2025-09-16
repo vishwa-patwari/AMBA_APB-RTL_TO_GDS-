@@ -1,0 +1,10 @@
+
+15. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `apb_slave_memory'. Setting top module to apb_slave_memory.
+
+15.1. Analyzing design hierarchy..
+Top module:  \apb_slave_memory
+
+15.2. Analyzing design hierarchy..
+Top module:  \apb_slave_memory
+Removed 0 unused modules.

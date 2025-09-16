@@ -1,0 +1,37 @@
+14. Executing CHECK pass (checking for obvious problems).
+Checking module apb_slave_memory...
+Warning: Wire apb_slave_memory.\pslverr is used but has no driver.
+Warning: Wire apb_slave_memory.\pready is used but has no driver.
+Warning: Wire apb_slave_memory.\prdata [31] is used but has no driver.
+Warning: Wire apb_slave_memory.\prdata [30] is used but has no driver.
+Warning: Wire apb_slave_memory.\prdata [29] is used but has no driver.
+Warning: Wire apb_slave_memory.\prdata [28] is used but has no driver.
+Warning: Wire apb_slave_memory.\prdata [27] is used but has no driver.
+Warning: Wire apb_slave_memory.\prdata [26] is used but has no driver.
+Warning: Wire apb_slave_memory.\prdata [25] is used but has no driver.
+Warning: Wire apb_slave_memory.\prdata [24] is used but has no driver.
+Warning: Wire apb_slave_memory.\prdata [23] is used but has no driver.
+Warning: Wire apb_slave_memory.\prdata [22] is used but has no driver.
+Warning: Wire apb_slave_memory.\prdata [21] is used but has no driver.
+Warning: Wire apb_slave_memory.\prdata [20] is used but has no driver.
+Warning: Wire apb_slave_memory.\prdata [19] is used but has no driver.
+Warning: Wire apb_slave_memory.\prdata [18] is used but has no driver.
+Warning: Wire apb_slave_memory.\prdata [17] is used but has no driver.
+Warning: Wire apb_slave_memory.\prdata [16] is used but has no driver.
+Warning: Wire apb_slave_memory.\prdata [15] is used but has no driver.
+Warning: Wire apb_slave_memory.\prdata [14] is used but has no driver.
+Warning: Wire apb_slave_memory.\prdata [13] is used but has no driver.
+Warning: Wire apb_slave_memory.\prdata [12] is used but has no driver.
+Warning: Wire apb_slave_memory.\prdata [11] is used but has no driver.
+Warning: Wire apb_slave_memory.\prdata [10] is used but has no driver.
+Warning: Wire apb_slave_memory.\prdata [9] is used but has no driver.
+Warning: Wire apb_slave_memory.\prdata [8] is used but has no driver.
+Warning: Wire apb_slave_memory.\prdata [7] is used but has no driver.
+Warning: Wire apb_slave_memory.\prdata [6] is used but has no driver.
+Warning: Wire apb_slave_memory.\prdata [5] is used but has no driver.
+Warning: Wire apb_slave_memory.\prdata [4] is used but has no driver.
+Warning: Wire apb_slave_memory.\prdata [3] is used but has no driver.
+Warning: Wire apb_slave_memory.\prdata [2] is used but has no driver.
+Warning: Wire apb_slave_memory.\prdata [1] is used but has no driver.
+Warning: Wire apb_slave_memory.\prdata [0] is used but has no driver.
+Found and reported 34 problems.
