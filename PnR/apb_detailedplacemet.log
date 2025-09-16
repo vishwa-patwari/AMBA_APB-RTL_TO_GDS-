@@ -1,0 +1,178 @@
+OpenROAD v2.0-22833-g3ed3271270 
+Features included (+) or not (-): +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ODB-0227] LEF file: /home/vishwa/OpenROAD/test/Nangate45/Nangate45_tech.lef, created 22 layers, 27 vias
+[INFO ODB-0227] LEF file: /home/vishwa/OpenROAD/test/Nangate45/Nangate45_stdcell.lef, created 135 library cells
+Startpoint: paddr[2] (input port clocked by pclk)
+Endpoint: _4815_ (rising edge-triggered flip-flop clocked by pclk)
+Path Group: pclk
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock pclk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   1.00    1.00 v input external delay
+   0.00    1.00 v paddr[2] (in)
+   0.07    1.07 v _4599_/ZN (OR2_X1)
+   0.66    1.73 ^ _2870_/ZN (NOR4_X1)
+   0.29    2.02 v _2871_/ZN (NAND2_X1)
+   0.10    2.12 v _2872_/Z (MUX2_X1)
+   0.00    2.12 v _4815_/D (DFF_X1)
+           2.12   data arrival time
+
+  10.00   10.00   clock pclk (rise edge)
+   0.00   10.00   clock network delay (ideal)
+  -0.10    9.90   clock uncertainty
+   0.00    9.90   clock reconvergence pessimism
+           9.90 ^ _4815_/CK (DFF_X1)
+  -0.04    9.86   library setup time
+           9.86   data required time
+---------------------------------------------------------
+           9.86   data required time
+          -2.12   data arrival time
+---------------------------------------------------------
+           7.74   slack (MET)
+
+
+[WARNING IFP-0028] Core area lower left (10.000, 10.000) snapped to (10.070, 11.200).
+[INFO IFP-0001] Added 92 rows of 683 site FreePDK45_38x28_10R_NP_162NW_34O.
+[INFO RSZ-0026] Removed 0 buffers.
+Found 0 macro blocks.
+Using 2 tracks default min distance between IO pins.
+[INFO PPL-0007] Random pin placement.
+[INFO TAP-0004] Inserted 184 endcaps.
+[INFO TAP-0005] Inserted 47 tapcells.
+[WARNING ORD-0046] -defer_connection has been deprecated.
+[WARNING ORD-0046] -defer_connection has been deprecated.
+[WARNING ORD-0046] -defer_connection has been deprecated.
+[WARNING ORD-0046] -defer_connection has been deprecated.
+[WARNING ORD-0046] -defer_connection has been deprecated.
+[INFO PDN-0001] Inserting grid: grid
+[INFO GPL-0002] DBU: 2000
+[INFO GPL-0003] SiteSize: (  0.190  1.400 ) um
+[INFO GPL-0004] CoreBBox: ( 10.070 11.200 ) ( 139.840 140.000 ) um
+[INFO GPL-0006] Number of instances:              3089
+[INFO GPL-0007] Movable instances:                2858
+[INFO GPL-0008] Fixed instances:                   231
+[INFO GPL-0009] Dummy instances:                     0
+[INFO GPL-0010] Number of nets:                   3987
+[INFO GPL-0011] Number of pins:                  12331
+[INFO GPL-0012] Die BBox:  (  0.000  0.000 ) ( 150.000 150.000 ) um
+[INFO GPL-0013] Core BBox: ( 10.070 11.200 ) ( 139.840 140.000 ) um
+[INFO GPL-0016] Core area:                   16714.376 um^2
+[INFO GPL-0017] Fixed instances area:           61.446 um^2
+[INFO GPL-0018] Movable instances area:      10836.308 um^2
+[INFO GPL-0019] Utilization:                    65.071 %
+[INFO GPL-0020] Standard cells area:         10836.308 um^2
+[INFO GPL-0021] Large instances area:            0.000 um^2
+[InitialPlace]  Iter: 1 conjugate gradient residual: 0.00000010 HPWL: 68137850
+[InitialPlace]  Iter: 2 conjugate gradient residual: 0.00000012 HPWL: 61356622
+[InitialPlace]  Iter: 3 conjugate gradient residual: 0.00000011 HPWL: 61174637
+[InitialPlace]  Iter: 4 conjugate gradient residual: 0.00000010 HPWL: 61143813
+[InitialPlace]  Iter: 5 conjugate gradient residual: 0.00000011 HPWL: 61091251
+[WARNING GPL-0302] Target density 0.3000 is too low for the available free area.
+Automatically adjusting to uniform density 0.6600.
+[INFO GPL-0023] Placement target density:       0.6600
+[INFO GPL-0024] Movable insts average area:      3.792 um^2
+[INFO GPL-0025] Ideal bin area:                  5.745 um^2
+[INFO GPL-0026] Ideal bin count:                  2909
+[INFO GPL-0027] Total bin area:              16714.376 um^2
+[INFO GPL-0028] Bin count (X, Y):          32 ,     32
+[INFO GPL-0029] Bin size (W * H):       4.055 *  4.025 um
+[INFO GPL-0030] Number of bins:                   1024
+[INFO GPL-0031] HPWL: Half-Perimeter Wirelength
+Iteration | Overflow |     HPWL (um) |  HPWL(%) |   Penalty | Group
+---------------------------------------------------------------
+        1 |   0.9745 |  3.595316e+07 |   +0.00% |  3.13e-15 |      
+       10 |   0.9484 |  4.002850e+07 |  +11.34% |  4.85e-15 |      
+       20 |   0.9437 |  4.044438e+07 |   +1.04% |  7.90e-15 |      
+       30 |   0.9411 |  4.083698e+07 |   +0.97% |  1.29e-14 |      
+       40 |   0.9415 |  4.074478e+07 |   -0.23% |  2.10e-14 |      
+       50 |   0.9421 |  4.061876e+07 |   -0.31% |  3.41e-14 |      
+       60 |   0.9418 |  4.062566e+07 |   +0.02% |  5.56e-14 |      
+       70 |   0.9413 |  4.068154e+07 |   +0.14% |  9.06e-14 |      
+       80 |   0.9411 |  4.071386e+07 |   +0.08% |  1.48e-13 |      
+       90 |   0.9412 |  4.073148e+07 |   +0.04% |  2.40e-13 |      
+      100 |   0.9409 |  4.077532e+07 |   +0.11% |  3.91e-13 |      
+      110 |   0.9402 |  4.087620e+07 |   +0.25% |  6.38e-13 |      
+      120 |   0.9388 |  4.104809e+07 |   +0.42% |  1.04e-12 |      
+      130 |   0.9369 |  4.130936e+07 |   +0.64% |  1.69e-12 |      
+      140 |   0.9342 |  4.170920e+07 |   +0.97% |  2.76e-12 |      
+      150 |   0.9295 |  4.230876e+07 |   +1.44% |  4.49e-12 |      
+      160 |   0.9233 |  4.313743e+07 |   +1.96% |  7.31e-12 |      
+      170 |   0.9157 |  4.417007e+07 |   +2.39% |  1.19e-11 |      
+      180 |   0.9025 |  4.542379e+07 |   +2.84% |  1.94e-11 |      
+      190 |   0.8853 |  4.702453e+07 |   +3.52% |  3.16e-11 |      
+      200 |   0.8633 |  4.882646e+07 |   +3.83% |  5.14e-11 |      
+      210 |   0.8357 |  5.088910e+07 |   +4.22% |  8.37e-11 |      
+      220 |   0.8026 |  5.300251e+07 |   +4.15% |  1.36e-10 |      
+      230 |   0.7683 |  5.527734e+07 |   +4.29% |  2.22e-10 |      
+      240 |   0.7239 |  5.733722e+07 |   +3.73% |  3.62e-10 |      
+      250 |   0.6790 |  5.903628e+07 |   +2.96% |  5.89e-10 |      
+      260 |   0.6309 |  6.064606e+07 |   +2.73% |  9.59e-10 |      
+[INFO GPL-0038] Routability snapshot saved at iter = 265
+      270 |   0.5810 |  6.137072e+07 |   +1.19% |  1.56e-09 |      
+      280 |   0.5277 |  6.235885e+07 |   +1.61% |  2.54e-09 |      
+      290 |   0.4729 |  6.310840e+07 |   +1.20% |  4.14e-09 |      
+      300 |   0.4063 |  6.364341e+07 |   +0.85% |  6.75e-09 |      
+      310 |   0.3543 |  6.453157e+07 |   +1.40% |  1.10e-08 |      
+      320 |   0.3178 |  6.502512e+07 |   +0.76% |  1.65e-08 |      
+[INFO GPL-0040] Routability iteration: 1
+[INFO GPL-0041] Total routing overflow: 0.0000
+[INFO GPL-0042] Number of overflowed tiles: 0 (0.00%)
+[INFO GPL-0043] Average top 0.5% routing congestion: 0.7741
+[INFO GPL-0044] Average top 1.0% routing congestion: 0.7556
+[INFO GPL-0045] Average top 2.0% routing congestion: 0.7380
+[INFO GPL-0046] Average top 5.0% routing congestion: 0.7120
+[INFO GPL-0047] Routability iteration weighted routing congestion: 0.7648
+[INFO GPL-0050] Weighted routing congestion is lower than target routing congestion(1.0100), end routability optimization.
+[INFO GPL-0090] Routability finished. Target routing congestion achieved succesfully.
+Iteration | Overflow |     HPWL (um) |  HPWL(%) |   Penalty | Group
+---------------------------------------------------------------
+      330 |   0.2840 |  6.530202e+07 |   +0.43% |  2.43e-08 |      
+      340 |   0.2572 |  6.561056e+07 |   +0.47% |  3.59e-08 |      
+      350 |   0.2194 |  6.573981e+07 |   +0.20% |  5.28e-08 |      
+      360 |   0.1949 |  6.583859e+07 |   +0.15% |  7.78e-08 |      
+      370 |   0.1630 |  6.597865e+07 |   +0.21% |  1.15e-07 |      
+      380 |   0.1386 |  6.620031e+07 |   +0.34% |  1.69e-07 |      
+      390 |   0.1155 |  6.635770e+07 |   +0.24% |  2.49e-07 |      
+[INFO GPL-1001] Finished with Overflow: 0.098139
+[INFO GPL-1002] Placed Cell Area            10836.3080
+[INFO GPL-1003] Available Free Area         16652.9300
+[INFO GPL-1004] Minimum Feasible Density        0.6600 (cell_area / free_area)
+[INFO GPL-1006]   Suggested Target Densities:
+[INFO GPL-1007]     - For 90% usage of free space: 0.7230
+[INFO GPL-1008]     - For 80% usage of free space: 0.8134
+[INFO GPL-1010] Original area (um^2): 10836.31
+[INFO GPL-1011] Total routability artificial inflation: 0.00 (+0.00%)
+[INFO GPL-1012] Total timing-driven delta area: 0.00 (+0.00%)
+[INFO GPL-1013] Final placement area: 10836.31 (+0.00%)
+Found 0 macro blocks.
+Using 2 tracks default min distance between IO pins.
+[INFO PPL-0001] Number of available slots 1834
+[INFO PPL-0002] Number of I/O             135
+[INFO PPL-0003] Number of I/O w/sink      135
+[INFO PPL-0004] Number of I/O w/o sink    0
+[INFO PPL-0005] Slots per section         200
+[INFO PPL-0008] Successfully assigned pins to sections.
+[INFO PPL-0012] I/O nets HPWL: 5593.00 um.
+Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining
+---------------------------------------------------------------------
+        0 |     +0.0% |       0 |       0 |             0 |      3987
+    final |     +4.3% |     243 |      70 |            66 |         0
+---------------------------------------------------------------------
+[INFO RSZ-0034] Found 60 slew violations.
+[INFO RSZ-0036] Found 26 capacitance violations.
+[INFO RSZ-0039] Resized 243 instances.
+[INFO RSZ-0038] Inserted 70 buffers in 66 nets.
+Placement Analysis
+---------------------------------
+total displacement       5268.9 u
+average displacement        1.7 u
+max displacement           10.4 u
+original HPWL           32762.2 u
+legalized HPWL          39221.4 u
+delta HPWL                   20 %
+

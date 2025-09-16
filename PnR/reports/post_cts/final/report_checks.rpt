@@ -1,0 +1,93 @@
+Startpoint: _5713_ (rising edge-triggered flip-flop clocked by pclk)
+Endpoint: _5712_ (rising edge-triggered flip-flop clocked by pclk)
+Path Group: pclk
+Path Type: min
+
+     Cap     Slew    Delay     Time   Description
+---------------------------------------------------------------------------
+                     0.000    0.000   clock pclk (rise edge)
+                     0.000    0.000   clock source latency
+  14.995    0.000    0.000    0.000 ^ pclk (in)
+            0.002    0.001    0.001 ^ clkbuf_0_pclk/A (BUF_X4)
+  26.936    0.018    0.030    0.031 ^ clkbuf_0_pclk/Z (BUF_X4)
+            0.018    0.001    0.032 ^ clkbuf_2_3__f_pclk/A (BUF_X4)
+  47.055    0.028    0.047    0.080 ^ clkbuf_2_3__f_pclk/Z (BUF_X4)
+            0.028    0.002    0.081 ^ clkbuf_leaf_18_pclk/A (BUF_X4)
+  38.463    0.023    0.043    0.124 ^ clkbuf_leaf_18_pclk/Z (BUF_X4)
+            0.024    0.005    0.129 ^ _5713_/CK (DFFR_X1)
+   3.261    0.008    0.096    0.225 v _5713_/Q (DFFR_X1)
+            0.008    0.000    0.225 v _4459_/A1 (OAI22_X1)
+   1.553    0.017    0.025    0.250 ^ _4459_/ZN (OAI22_X1)
+            0.017    0.000    0.250 ^ _5712_/D (DFFR_X1)
+                              0.250   data arrival time
+
+                     0.000    0.000   clock pclk (rise edge)
+                     0.000    0.000   clock source latency
+  14.995    0.000    0.000    0.000 ^ pclk (in)
+            0.002    0.001    0.001 ^ clkbuf_0_pclk/A (BUF_X4)
+  26.936    0.018    0.030    0.031 ^ clkbuf_0_pclk/Z (BUF_X4)
+            0.018    0.001    0.032 ^ clkbuf_2_3__f_pclk/A (BUF_X4)
+  47.055    0.028    0.047    0.080 ^ clkbuf_2_3__f_pclk/Z (BUF_X4)
+            0.028    0.002    0.081 ^ clkbuf_leaf_18_pclk/A (BUF_X4)
+  38.463    0.023    0.043    0.124 ^ clkbuf_leaf_18_pclk/Z (BUF_X4)
+            0.024    0.005    0.129 ^ _5712_/CK (DFFR_X1)
+                     0.100    0.229   clock uncertainty
+                     0.000    0.229   clock reconvergence pessimism
+                     0.015    0.244   library hold time
+                              0.244   data required time
+---------------------------------------------------------------------------
+                              0.244   data required time
+                             -0.250   data arrival time
+---------------------------------------------------------------------------
+                              0.007   slack (MET)
+
+
+Startpoint: paddr[23] (input port clocked by pclk)
+Endpoint: _4725_ (rising edge-triggered flip-flop clocked by pclk)
+Path Group: pclk
+Path Type: max
+
+     Cap     Slew    Delay     Time   Description
+---------------------------------------------------------------------------
+                     0.000    0.000   clock pclk (rise edge)
+                     0.000    0.000   clock network delay (propagated)
+                     1.000    1.000 v input external delay
+   4.605    0.000    0.000    1.000 v paddr[23] (in)
+            0.000    0.000    1.000 v _4489_/A4 (NOR4_X2)
+   7.848    0.063    0.100    1.100 ^ _4489_/ZN (NOR4_X2)
+            0.063    0.001    1.100 ^ _4493_/A1 (NAND4_X1)
+   7.332    0.039    0.063    1.164 v _4493_/ZN (NAND4_X1)
+            0.039    0.001    1.165 v _4494_/A3 (NOR3_X1)
+   5.831    0.054    0.092    1.257 ^ _4494_/ZN (NOR3_X1)
+            0.054    0.000    1.257 ^ _4495_/A2 (AND2_X4)
+  53.548    0.033    0.068    1.325 ^ _4495_/ZN (AND2_X4)
+            0.033    0.001    1.326 ^ load_slew2/A (BUF_X4)
+ 152.390    0.083    0.104    1.430 ^ load_slew2/Z (BUF_X4)
+            0.086    0.017    1.447 ^ _4566_/A1 (NAND2_X4)
+ 119.806    0.062    0.093    1.539 v _4566_/ZN (NAND2_X4)
+            0.068    0.023    1.562 v _4573_/S (MUX2_X1)
+   1.327    0.011    0.072    1.634 v _4573_/Z (MUX2_X1)
+            0.011    0.000    1.634 v _4725_/D (DFF_X1)
+                              1.634   data arrival time
+
+                    10.000   10.000   clock pclk (rise edge)
+                     0.000   10.000   clock source latency
+  14.995    0.000    0.000   10.000 ^ pclk (in)
+            0.002    0.001   10.001 ^ clkbuf_0_pclk/A (BUF_X4)
+  26.936    0.018    0.030   10.031 ^ clkbuf_0_pclk/Z (BUF_X4)
+            0.018    0.001   10.032 ^ clkbuf_2_0__f_pclk/A (BUF_X4)
+  44.808    0.027    0.046   10.078 ^ clkbuf_2_0__f_pclk/Z (BUF_X4)
+            0.027    0.002   10.080 ^ clkbuf_leaf_1_pclk/A (BUF_X4)
+  37.375    0.023    0.043   10.123 ^ clkbuf_leaf_1_pclk/Z (BUF_X4)
+            0.023    0.002   10.125 ^ _4725_/CK (DFF_X1)
+                    -0.100   10.025   clock uncertainty
+                     0.000   10.025   clock reconvergence pessimism
+                    -0.033    9.992   library setup time
+                              9.992   data required time
+---------------------------------------------------------------------------
+                              9.992   data required time
+                             -1.634   data arrival time
+---------------------------------------------------------------------------
+                              8.358   slack (MET)
+
+

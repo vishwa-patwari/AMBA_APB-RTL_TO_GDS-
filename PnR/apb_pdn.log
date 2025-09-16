@@ -1,0 +1,51 @@
+OpenROAD v2.0-22833-g3ed3271270 
+Features included (+) or not (-): +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ODB-0227] LEF file: /home/vishwa/OpenROAD/test/Nangate45/Nangate45_tech.lef, created 22 layers, 27 vias
+[INFO ODB-0227] LEF file: /home/vishwa/OpenROAD/test/Nangate45/Nangate45_stdcell.lef, created 135 library cells
+Startpoint: paddr[2] (input port clocked by pclk)
+Endpoint: _4815_ (rising edge-triggered flip-flop clocked by pclk)
+Path Group: pclk
+Path Type: max
+
+  Delay    Time   Description
+---------------------------------------------------------
+   0.00    0.00   clock pclk (rise edge)
+   0.00    0.00   clock network delay (ideal)
+   1.00    1.00 v input external delay
+   0.00    1.00 v paddr[2] (in)
+   0.07    1.07 v _4599_/ZN (OR2_X1)
+   0.66    1.73 ^ _2870_/ZN (NOR4_X1)
+   0.29    2.02 v _2871_/ZN (NAND2_X1)
+   0.10    2.12 v _2872_/Z (MUX2_X1)
+   0.00    2.12 v _4815_/D (DFF_X1)
+           2.12   data arrival time
+
+  10.00   10.00   clock pclk (rise edge)
+   0.00   10.00   clock network delay (ideal)
+  -0.10    9.90   clock uncertainty
+   0.00    9.90   clock reconvergence pessimism
+           9.90 ^ _4815_/CK (DFF_X1)
+  -0.04    9.86   library setup time
+           9.86   data required time
+---------------------------------------------------------
+           9.86   data required time
+          -2.12   data arrival time
+---------------------------------------------------------
+           7.74   slack (MET)
+
+
+[INFO IFP-0001] Added 57 rows of 422 site FreePDK45_38x28_10R_NP_162NW_34O.
+[INFO RSZ-0026] Removed 0 buffers.
+Found 0 macro blocks.
+Using 2 tracks default min distance between IO pins.
+[INFO PPL-0007] Random pin placement.
+[INFO TAP-0004] Inserted 114 endcaps.
+[INFO TAP-0005] Inserted 0 tapcells.
+[WARNING ORD-0046] -defer_connection has been deprecated.
+[WARNING ORD-0046] -defer_connection has been deprecated.
+[WARNING ORD-0046] -defer_connection has been deprecated.
+[WARNING ORD-0046] -defer_connection has been deprecated.
+[WARNING ORD-0046] -defer_connection has been deprecated.
+[INFO PDN-0001] Inserting grid: grid
